@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6687</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#FF6687</color>
+
+    <color name="tab_select_color">#FF6687</color>
+    <color name="color_999">#999999</color>
+    <color name="register_blue">#61B0F8</color>
+    <color name="color_333">#333333</color>
+    <color name="color_666">#666666</color>
+    <color name="register_red">#FF6687</color>
+    <color name="color_FFF7F8">#FFF7F8</color>
+    <color name="color_FFCFD9">#FFCFD9</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_ff6687">#FF6687</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="color_F73737">#F73737</color>
+    <color name="color_f9f9f9">#F9F9F9</color>
+    <color name="color_e6e6e6">#e6e6e6</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="black_30">#4d000000</color>
+    <color name="color_b5b5b5">#b5b5b5</color>
+    <color name="color_e1e1e1">#E1E1E1</color>
+    <color name="color_52c41a">#52C41A</color>
+    <color name="color_f9ca4c">#F9CA4C</color>
+
+    <color name="color_FF556E">#FF556E</color>
+    <color name="color_FF9280">#FF9280</color>
+
+    <color name="et_hint">#B8B8B8</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_FE6D91">#FE6D91</color>
+    <color name="color_3AA1FF">#3AA1FF</color>
+    <color name="color_9B9B9B">#9B9B9B</color>
+    <color name="color_F6F7F8">#F6F7F8</color>
+    <color name="color_DDDDDD">#DDDDDD</color>
+
+</resources>

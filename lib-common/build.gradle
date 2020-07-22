@@ -1,0 +1,112 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+        //设置支持的so库架构
+        ndk { abiFilters 'armeabi-v7a' }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField("Boolean", "ENV_TEST", "false")
+            minifyEnabled true
+            consumerProguardFiles 'proguard-rules.pro' //子模块需要指定混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField("Boolean", "ENV_TEST", "true")
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api rootProject.ext.deps.appcompat
+    api rootProject.ext.deps.ktxCore
+    api rootProject.ext.deps.lifecycleExtensions
+    api rootProject.ext.deps.constraintlayout
+    api rootProject.ext.deps.preference
+
+    api rootProject.ext.deps.junit
+    api rootProject.ext.deps.testJunit
+    api rootProject.ext.deps.espresso
+
+    // ViewModel
+    api rootProject.ext.deps.viewmodel
+    // LiveData
+    api rootProject.ext.deps.livedata
+    // navigation
+    api rootProject.ext.deps.navigationFragment
+    api rootProject.ext.deps.navigationUi
+
+    // screen adaptation
+    api rootProject.ext.deps.autoSize
+
+    // logger
+    api rootProject.ext.deps.logger
+
+    // BaseRecyclerViewAdapterHelper
+    api rootProject.ext.deps.baseRecyclerViewAdapterHelper
+
+    // photoView
+    api rootProject.ext.deps.photoView
+
+    // 基础依赖包，必须要依赖
+    api rootProject.ext.deps.immersionbar
+    // fragment快速实现（可选）
+    api rootProject.ext.deps.immersionbarComponents
+    // kotlin扩展（可选）
+    api rootProject.ext.deps.immersionbarktx
+
+    // EventBus
+    api rootProject.ext.deps.eventBus
+
+    // bugly
+    api rootProject.ext.deps.bugly
+
+    // UtilCode
+    api rootProject.ext.deps.utilcodex
+
+    api rootProject.ext.deps.svga
+
+    // ARouter
+    api rootProject.ext.deps.arouter
+    kapt rootProject.ext.deps.arouterCompiler
+
+    //Agora Rtc
+    api rootProject.ext.deps.agoraRtc
+
+    // permission
+    api rootProject.ext.deps.permissionx
+
+    // 选择器
+    api rootProject.ext.deps.pickerView
+
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    // 图片lib
+    api project(':lib-photo')
+
+    // 网络
+    api project(':lib-net')
+}

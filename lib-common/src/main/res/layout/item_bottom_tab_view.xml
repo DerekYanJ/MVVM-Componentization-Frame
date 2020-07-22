@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/iv_svg"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="6dp"
+        app:autoPlay="false"
+        app:clearsAfterStop="false"
+        app:loopCount="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_999"
+        android:textSize="14sp"
+        android:text="消息"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="2dp"/>
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_tab_dot"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:src="@drawable/shape_dot"
+        app:layout_constraintStart_toEndOf="@id/iv_svg"
+        app:layout_constraintEnd_toEndOf="@id/iv_svg"
+        app:layout_constraintBottom_toTopOf="@id/iv_svg"
+        app:layout_constraintTop_toTopOf="@+id/iv_svg"
+        android:layout_marginStart="2dp"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_tab_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_dot"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@id/iv_svg"
+        app:layout_constraintEnd_toEndOf="@id/iv_svg"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="2dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
